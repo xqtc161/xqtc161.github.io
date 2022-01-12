@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--Starpage by -->
+<html>
+  <head>
+    <title>Start | xqtc</title>
+    <link rel="icon" type="image/x-icon" href="favicon2.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" style="text/css" href="general.css" />
+  </head>
+
+  <body>
+    <div class="main" id="main1" style="display: block">
+      <img class="image-wrapper" src="img/side6.gif" />
+      <header>
+        <h1>Welcome to <span class="flair">Till's Wired</span></h1>
+        <h2 class="litequote">
+          There was no reason for me to stay in the real world any longer. In the real world, it didn't matter if I was there or not. When I realized that, I was no longer afraid of <span class="flair">losing my body.</span>
+            
+        </h2>
+      </header>
+
+      <div>
+        <form action="https://duckduckgo.com/" method="GET" autocomplete="off">
+          <label for="q">></label>
+          <input
+            autofocus
+            id="q"
+            name="q"
+            type="search"
+            placeholder="Search with duckduckgo..."
+          />
+        </form>
+      </div>
+
+      <nav>
+        <ul class="blue">
+          <a>Work</a>    
+            <li>
+                <a href="https://www.schulportal-erzbistum-pb.de/wws/9.php#/wws/home.php?sid=25035981914884965719050945355950172482149935857736399864199979997180S37b2cad0" 
+                  >schulportal-pb</a>
+                </li>
+				
+            <li>
+                <a href="https://github.com/axyl-os/axyl-iso/blob/master/keybindings.md" 
+                  >axyl keybinds</a
+                >
+              </li>
+        </ul>
+
+        <ul class="green">
+          <a>Dev</a>
+          <li><a href="https://github.com/xqtc161" >github</a></li>
+        </ul>
+
+        <ul class="red">
+              <a>Social</a>
+            <li><a href="https://www.twitter.com/_xqtc">twitter</a></li>
+            <li><a href="https://reddit.com/u/razorblade_ramen">reddit</a></li>
+            <li><a href="https://www.instagram.com/l4in_iw4kura">instagram</a></li>
+          
+        </ul>
+
+        <ul class="yellow">
+          <a>Media</a>
+          <li>
+                <a href="https://youtube.com/" >youtube</a>
+              </li>
+              <li>
+                <a href=https://www.amazon.de/gp/video/storefront/ref=sv_atv_logo?node=3010075031" >primevideo</a>
+              </li>
+              <li><a href="https://twitch.tv/" >twitch</a></li>
+              <li>
+                <a href="https://netflix.com/" >netflix</a>
+              </li>
+              <li><a href="https://anicloud.io">anicloud</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main" id="main2" style="display: none">
+      <img class="image-wrapper" src="img/side5.gif" />
+
+      <iframe
+        src="https://www.youtube.com/embed/ABBpsy6rlVU"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="bottomcontainer">
+      <!--Button script-->
+      <script type="text/javascript">
+        function show(show1) {
+          document.getElementById(show1).style.display = "block";
+        }
+        function hide(hide1) {
+          document.getElementById(hide1).style.display = "none";
+        }
+        function tog(tog1) {
+          document.getElementById(tog1).style.backgroundColor = "#0972D6";
+        }
+        function toh(toh1) {
+          document.getElementById(toh1).style.backgroundColor = "#FFFFFF";
+        }
+      </script>
+
+      <div
+        class="button"
+        id="btn1"
+        onclick="show('main1');hide('main2');tog('btn1');toh('btn2');"
+      ></div>
+      <div
+        class="button"
+        id="btn2"
+        onclick="show('main2');hide('main1');tog('btn2');toh('btn1');"
+      ></div>
+
+      <!--Live clock script-->
+      <div class="time" id="time">
+        <script>
+          //document.getElementById("main").innerHTML = Date();
+          function updateClock() {
+            var days = [
+              "SUNDAY",
+              "MONDAY",
+              "TUESDAY",
+              "WEDNESDAY",
+              "THURSDAY",
+              "FRIDAY",
+              "SATURDAY",
+            ];
+            var m = new Date();
+            var dateString =
+              days[m.getDay()] +
+              " " +
+              ("0" + m.getDate()).slice(-2) +
+              "/" +
+              ("0" + (m.getMonth() + 1)).slice(-2) +
+              "/" +
+              m.getFullYear() +
+              " " +
+              ("0" + m.getHours()).slice(-2) +
+              ":" +
+              ("0" + m.getMinutes()).slice(-2) +
+              ":" +
+              ("0" + m.getSeconds()).slice(-2);
+
+            // set the content of the element with the ID time to the formatted string
+            document.getElementById("time").innerHTML = dateString;
+
+            // call this function again in 1000ms
+            setTimeout(updateClock, 1000);
+          }
+          updateClock(); // initial call
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
